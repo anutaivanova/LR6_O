@@ -13,8 +13,15 @@ addons:
     - gcc-4.8
     - g++-4.8
 
+before_script:
+  - mkdir build
+  - cd build
+  - cmake ..
+
 script:
+  - cmake ..
   - make
+   - make
   - g++ client_LR6.c -o client_LR6
   - ./test
   - ./client_LR6 3324
