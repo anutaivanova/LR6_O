@@ -1,0 +1,20 @@
+sudo: false
+language: cpp
+compiler:
+  - gcc
+os:
+  - linux
+
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - gcc-4.8
+    - g++-4.8
+
+script:
+  - make
+  - g++ client_LR6.c -o client_LR6
+  - ./test
+  - ./client_LR6 3324
